@@ -2,6 +2,7 @@ package com.Batch3.User;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
@@ -29,4 +30,22 @@ public static List<UserModel> getAllUser(){
 	}
 	return userlist;
 }
+
+public static boolean deleteUser(int id) {
+	try {
+		Class.forName("com.mysql.jdbc.Driver");
+		Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/Batch3","root" ,"Amanulla1997" );
+		PreparedStatement pst = con.prepareStatement("delete from Batch3.Register where id=?");
+		pst.setInt(1,id);
+		int result = pst.executeUpdate();
+		if(result>0) {
+			return true;
+		}
+	}catch(Exception e) {
+		e.printStackTrace();
+	}
+	return false;
+}
+
+
 }

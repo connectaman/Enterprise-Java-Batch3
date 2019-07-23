@@ -33,6 +33,8 @@ for(UserModel r:l){
 <td><%= r.getEmail() %></td>
 <td><%= r.getPhone() %></td>
 <td><%= r.getCity() %></td>
+<td><a href="DeleteServlet?id=<%= r.getId() %>">Delete</a></td>
+<td><a href="">Update</a></td>
 </tr>
 <%} %>
 </table>

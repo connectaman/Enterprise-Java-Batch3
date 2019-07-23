@@ -1,0 +1,12 @@
+body{
+    background-color: aqua;
+    margin:0;
+    padding:0;
+}
+.cover{
+    position: absolute;
+    font-size: 40px;
+    color:white;
+    top:30%;
+    left:20%;
+}

@@ -1,0 +1,18 @@
+body{
+    background: url('https://d1pe6f90ru47yo.cloudfront.net/wp-content/uploads/2018/07/13080858/student-849825__340.jpg');
+    background-size:cover; 
+}
+
+.registerform{
+    width:60%;
+    position: absolute;
+    top:25%;
+    left:20%;
+    text-align: center;
+    background-color: white;
+    margin:10px;
+}
+input{
+    width:60%;
+    margin:10px;
+}
