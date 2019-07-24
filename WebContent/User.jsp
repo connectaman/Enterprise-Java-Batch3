@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%@ page import="java.util.*,com.Batch3.User.*" %>
+    <%@ page import="java.util.*,com.Batch_3.User.*" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -12,9 +12,24 @@
 
 <%
 List<UserModel> l= (List<UserModel>)request.getAttribute("data");
+HttpSession s = request.getSession();
+String name = (String)s.getAttribute("name");
 %>
 <div class="listuser">
 <center>
+
+<form action="UserServlet" method="POST">
+<input type="text" name="search" placeholder="ENter the name to search" required>
+<input type="submit" value="search">
+</form>
+
+
+
+<%
+if(name!=null){
+%>
+<h2>Welcome <%=name%></h2>
+<%} %>
 <table>
 <tr>
 <th>Id</th>

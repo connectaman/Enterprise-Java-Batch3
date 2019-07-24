@@ -25,5 +25,15 @@ public class UserServlet extends HttpServlet {
 		dispatcher.forward(request, response);
 	}
 
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String search = request.getParameter("search");
+		List<UserModel> users = new ArrayList<>();
+		users = UserDAO.searchUserByName(search);
+		RequestDispatcher dispatcher =request.getRequestDispatcher("User.jsp");
+		request.setAttribute("data", users);
+		dispatcher.forward(request, response);
+		
+	}
+
 
 }
